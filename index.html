@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <script>
+    if (localStorage.getItem("logado") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">To-Do List</a>
@@ -17,6 +22,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Criar conta</a></li>
                     <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
                 </ul>
             </div>
@@ -30,9 +36,12 @@
             <button id="add-btn" class="btn btn-primary">Adicionar</button>
         </div>
         <ul id="todo-list" class="list-group"></ul>
+        
     </main>
 
     <footer class="text-center py-4 bg-light mt-5">© 2025.1 Projeto Git</footer>
+    <script src="/Recursos/js/script.js"></script>
+
 </body>
 
 </html>
