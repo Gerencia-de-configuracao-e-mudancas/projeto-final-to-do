@@ -17,6 +17,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
                     <li class="nav-item"><a class="nav-link active" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Criar conta</a></li>
                     <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
                 </ul>
             </div>
@@ -24,19 +25,30 @@
     </nav>
 
     <main class="container py-5" style="max-width:400px;">
-        <h1 class="mb-4">Login</h1>
-        <form>
-            <div class="mb-3">
-                <label class="form-label">E-mail</label>
-                <input type="email" class="form-control" placeholder="Digite seu e-mail">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Senha</label>
-                <input type="password" class="form-control" placeholder="Digite sua senha">
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Entrar</button>
-        </form>
-    </main>
+    <h1 class="mb-4">Login</h1>
+    <form id="login-form">
+        <div class="mb-3">
+            <label class="form-label">E-mail</label>
+            <input type="email" id="email" class="form-control" placeholder="Digite seu e-mail">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Senha</label>
+            <input type="password" id="senha" class="form-control" placeholder="Digite sua senha">
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+    </form>
+       <p class="mt-3 text-center">Não tem uma conta? <a href="register.html">Crie aqui</a></p>
+</main>
+
+<script src="/Recursos/js/script.js"></script>
+<script>
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const senha = document.getElementById("senha").value;
+        login(email, senha);
+    });
+</script>
 
     <footer class="text-center py-4 bg-light mt-5">© 2025.1 Projeto Git</footer>
 </body>
